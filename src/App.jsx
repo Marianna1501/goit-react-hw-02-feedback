@@ -4,6 +4,7 @@ import Statistic from './components/Statistic/Statistic'
 import Container from './App.styled'
 import Section from './components/Section/Section'
 
+
 class App extends React.Component {
   state ={
     good: 0,
@@ -23,7 +24,7 @@ countTotalFeedback = ()=>{
 }
 
 countPositiveFeedbackPercentage=()=>{
-  return (this.state.good/Object.values(this.state).reduce((total, value)=> total+value, 0) *100).toFixed()
+  return (this.state.good/this.countTotalFeedback() *100).toFixed()
 }
 
 
@@ -53,7 +54,5 @@ render=()=>{
     </Container>)
 }
 };
-
-// export default App
 
 export default App;

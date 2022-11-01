@@ -1,4 +1,11 @@
-const Notafication = ()=>{
-    return <p>There is no feedback</p>
+import PropTypes from 'prop-types';
+
+const Notification = ({ message })=> {
+  return <p>{message}</p>;
 }
-export default Notafication
+
+Notification.propTypes = {
+  message: PropTypes.string.isRequired,
+};
+
+export default Notification;
